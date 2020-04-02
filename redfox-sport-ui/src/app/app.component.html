@@ -1,15 +1,19 @@
 <nb-layout>
 
   <nb-layout-header fixed>
-  <!-- Insert header here -->
+    <app-header></app-header>
   </nb-layout-header>
+
+  <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive>
+    <nb-menu [items]="sideBarItems"></nb-menu>
+  </nb-sidebar>
 
   <nb-layout-column>
     <router-outlet></router-outlet>
   </nb-layout-column>
 
   <nb-layout-footer fixed>
-  <!-- Insert footer here -->
+    <!-- Insert footer here -->
   </nb-layout-footer>
 
 </nb-layout>
