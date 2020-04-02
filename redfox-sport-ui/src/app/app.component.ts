@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NbMenuItem } from '@nebular/theme';
+import { SIDE_BAR_ITEMS } from './core/models/constants/side-bar-items';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'redfox-sport-ui';
+  public title = 'redfox-sport-ui';
+  public sideBarItems: NbMenuItem[] = SIDE_BAR_ITEMS;
 }
