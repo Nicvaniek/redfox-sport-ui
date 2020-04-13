@@ -13,7 +13,8 @@ script:
   - cd redfox-sport-ui
   - npm install
   - ng build --prod
-  - ng test --watch false --browsers ChromeHeadless
+  - npm run lint
+  - npm run test
 deploy:
   on:
     branch: master
