@@ -7,15 +7,14 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
-  let sideBarService: jasmine.SpyObj<NbSidebarService>;
+  let sideBarService: NbSidebarService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [HeaderComponent],
       imports: [NbUserModule, NbIconModule, NbActionsModule, NbEvaIconsModule],
       providers: [{ provide: NbSidebarService, useValue: jasmine.createSpyObj('NbSidebarService', ['toggle']) }]
-    })
-      .compileComponents();
+    }).compileComponents();
     sideBarService = TestBed.inject(NbSidebarService);
   }));
 
