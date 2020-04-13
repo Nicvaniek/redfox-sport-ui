@@ -1,0 +1,22 @@
+sudo: required
+addons:
+  chrome: stable
+language: node_js
+node_js:
+  - "10.0"
+before_script:
+  - npm install -g @angular/cli
+jobs:
+  include:
+    - stage: build
+      script:
+        - npm install
+        - ng build --prod
+    - stage: test
+      script: ng test --watch false --browsers ChromeHeadless
+    - stage: deploy
+      if: branch = master
+      skip_cleanup: true
+      provider: firebase
+      token:
+        secure: $FIREBASE_TOKEN
