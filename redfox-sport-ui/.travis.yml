@@ -1,0 +1,23 @@
+sudo: required
+addons:
+  chrome: stable
+language: node_js
+node_js:
+  - "12.0"
+before_script:
+  - npm install -g @angular/cli
+  - cd redfox-sport-ui
+
+jobs:
+  include:
+    - stage: build
+      script: 
+        - npm install
+        - ng build --prod
+    - stage: test
+      script: ng test --watch false --browsers ChromeHeadless
+    - stage: deploy
+      skip_cleanup: true
+      provider: firebase
+      token:
+        secure: $FIREBASE_TOKEN
