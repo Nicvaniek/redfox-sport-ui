@@ -4,19 +4,16 @@ addons:
 language: node_js
 node_js:
   - "10.0"
+branches:
+  only:
+    - master
 before_script:
   - npm install -g @angular/cli
-jobs:
-  include:
-    - stage: build
-      script:
-        - npm install
-        - ng build --prod
-    - stage: test
-      script: ng test --watch false --browsers ChromeHeadless
-    - stage: deploy
-      if: branch = master
-      skip_cleanup: true
-      provider: firebase
-      token:
-        secure: $FIREBASE_TOKEN
+script:
+  - npm install
+  - ng build --prod
+deploy:
+  skip_cleanup: true
+  provider: firebase
+  token:
+    secure: $FIREBASE_TOKEN
