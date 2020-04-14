@@ -19,7 +19,28 @@ export const SIDE_BAR_ITEMS: NbMenuItem[] = [
     {
         title: 'Football',
         icon: 'cube-outline',
-        link: '/pages/dashboard',
+        children: [
+            {
+                title: 'Football Home',
+                link: '/pages/modal-overlays/dialog',
+            },
+            {
+                title: 'English Premier League',
+                link: '/pages/modal-overlays/window',
+            },
+            {
+                title: 'UEFA Champions League',
+                link: '/pages/modal-overlays/popover',
+            },
+            {
+                title: 'UEFA Europa League',
+                link: '/pages/modal-overlays/toastr',
+            },
+            {
+                title: 'EFL Cup',
+                link: '/pages/modal-overlays/tooltip',
+            },
+        ]
     },
     {
         title: 'Golf',
