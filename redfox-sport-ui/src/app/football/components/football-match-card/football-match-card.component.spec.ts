@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FootballMatchCardComponent } from './football-match-card.component';
+import { NbCardModule } from '@nebular/theme';
 
 describe('FootballMatchCardComponent', () => {
   let component: FootballMatchCardComponent;
@@ -8,7 +9,8 @@ describe('FootballMatchCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [FootballMatchCardComponent]
+      declarations: [FootballMatchCardComponent],
+      imports: [NbCardModule]
     })
       .compileComponents();
   }));
