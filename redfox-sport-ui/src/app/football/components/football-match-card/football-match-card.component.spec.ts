@@ -8,14 +8,30 @@ describe('FootballMatchCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FootballMatchCardComponent ]
+      declarations: [FootballMatchCardComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(FootballMatchCardComponent);
     component = fixture.componentInstance;
+    component.match = {
+      league: {
+        name: 'English Premier League'
+      },
+      homeTeam: {
+        name: 'Man United',
+        crest: ''
+      },
+      awayTeam: {
+        name: 'Man City',
+        crest: ''
+      },
+      homeTeamGoals: 0,
+      awayTeamGoals: 0,
+      time: '24\''
+    };
     fixture.detectChanges();
   });
 
