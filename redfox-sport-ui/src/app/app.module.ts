@@ -15,6 +15,7 @@ import {
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { HeaderComponent } from './core/components/header/header.component';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { HeaderComponent } from './core/components/header/header.component';
     NbIconModule,
     NbUserModule,
     NbActionsModule,
-    NbContextMenuModule
+    NbContextMenuModule,
+    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

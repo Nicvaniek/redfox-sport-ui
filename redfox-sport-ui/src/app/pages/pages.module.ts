@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './home-page/home-page.component';
-import { NbCardModule } from '@nebular/theme';
+import { FootballModule } from '../football/football.module';
+import { NbButtonModule } from '@nebular/theme';
 
 
 
@@ -9,7 +10,8 @@ import { NbCardModule } from '@nebular/theme';
   declarations: [HomePageComponent],
   imports: [
     CommonModule,
-    NbCardModule
+    FootballModule,
+    NbButtonModule
   ]
 })
 export class PagesModule { }

@@ -4,7 +4,7 @@ export const SIDE_BAR_ITEMS: NbMenuItem[] = [
     {
         title: 'Home',
         icon: 'home-outline',
-        link: '/pages/iot-dashboard',
+        link: '/home',
         home: true
     },
     {
