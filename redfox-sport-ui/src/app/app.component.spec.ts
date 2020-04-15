@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { NbLayoutModule, NbSidebarModule, NbThemeModule, NbMenuModule, NbUserModule, NbIconModule, NbActionsModule } from '@nebular/theme';
 import { HeaderComponent } from './core/components/header/header.component';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { PagesModule } from './pages/pages.module';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -17,7 +18,8 @@ describe('AppComponent', () => {
         NbUserModule,
         NbIconModule,
         NbActionsModule,
-        NbEvaIconsModule
+        NbEvaIconsModule,
+        PagesModule
       ],
       declarations: [
         AppComponent,

@@ -1,0 +1,12 @@
+<h1>Sport Today</h1>
+<h2 class="mt-4">Football</h2>
+<div class="row">
+    <div class="col-12 col-md-4 mb-3" *ngFor="let footballMatch of footballMatches">
+        <app-football-match-card [match]="footballMatch"></app-football-match-card>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <button class="view-all float-right" nbButton shape="round" size="small" status="success">View all football matches</button>
+    </div>
+</div>
