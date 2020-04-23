@@ -9,8 +9,8 @@ import { FootballTableComponent } from './components/football-table/football-tab
 
 @NgModule({
   declarations: [
-    FootballMatchCardComponent, 
-    FootballFixturesComponent, 
+    FootballMatchCardComponent,
+    FootballFixturesComponent,
     FootballTableComponent
   ],
   imports: [
@@ -21,8 +21,8 @@ import { FootballTableComponent } from './components/football-table/football-tab
     NbListModule
   ],
   exports: [
-    FootballMatchCardComponent, 
-    FootballFixturesComponent, 
+    FootballMatchCardComponent,
+    FootballFixturesComponent,
     FootballTableComponent
   ]
 })

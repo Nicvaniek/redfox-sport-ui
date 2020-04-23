@@ -11,7 +11,7 @@ import { FootballHomePageComponent } from './football-home-page/football-home-pa
 @NgModule({
   declarations: [
     HomePageComponent,
-    FootballLeaguePageComponent, 
+    FootballLeaguePageComponent,
     FootballHomePageComponent
   ],
   imports: [
