@@ -1,0 +1,27 @@
+<nb-card>
+    <nb-card-header class="fixture-card-header d-flex justify-content-between align-items-end">
+        <nb-icon icon="arrow-ios-back-outline"></nb-icon>
+        <span>Today</span>
+        <nb-icon icon="arrow-ios-forward-outline"></nb-icon>
+    </nb-card-header>
+    <nb-list>
+        <nb-list-item class="d-flex justify-content-center" *ngFor="let match of fixtures">
+            <span class="list-item-child home-team-name mr-2">
+                {{ match.homeTeam.name }}
+            </span>
+            <div class="list-item-child d-flex justify-content-around align-items-center">
+                <img class="crest" [src]="match.homeTeam.crest">
+                <span *ngIf="match.time" class="ml-2 mr-2">
+                    {{ match.homeTeamGoals }} - {{ match.awayTeamGoals }}
+                </span>
+                <span *ngIf="!match.time" class="ml-2 mr-2 text-muted">
+                    {{ match.matchDate.time }}
+                </span>
+                <img class="crest" [src]="match.awayTeam.crest">
+            </div>
+            <span class="list-item-child ml-2">
+                {{ match.awayTeam.name }}
+            </span>
+        </nb-list-item>
+    </nb-list>
+</nb-card>

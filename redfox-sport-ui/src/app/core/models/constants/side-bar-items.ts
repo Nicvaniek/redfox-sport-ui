@@ -22,23 +22,23 @@ export const SIDE_BAR_ITEMS: NbMenuItem[] = [
         children: [
             {
                 title: 'Football Home',
-                link: '/pages/modal-overlays/dialog',
+                link: '/football',
             },
             {
                 title: 'English Premier League',
-                link: '/pages/modal-overlays/window',
+                link: '/football/leagues/24',
             },
             {
                 title: 'UEFA Champions League',
-                link: '/pages/modal-overlays/popover',
+                link: '/football/leagues/25',
             },
             {
                 title: 'UEFA Europa League',
-                link: '/pages/modal-overlays/toastr',
+                link: '/football/leagues/26',
             },
             {
                 title: 'EFL Cup',
-                link: '/pages/modal-overlays/tooltip',
+                link: '/football/leagues/27',
             },
         ]
     },

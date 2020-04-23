@@ -8,6 +8,5 @@ import { SIDE_BAR_ITEMS } from './core/models/constants/side-bar-items';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public title = 'redfox-sport-ui';
   public sideBarItems: NbMenuItem[] = SIDE_BAR_ITEMS;
 }

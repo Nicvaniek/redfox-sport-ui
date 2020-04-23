@@ -1,0 +1,43 @@
+table {
+    border-collapse: separate;
+    border-spacing: 0 5px;
+}
+
+.align-left {
+    text-align: left !important;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center !important;
+}
+
+td {
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.promotion {
+    border-left: 4px solid mediumspringgreen;
+}
+
+.play-off {
+    border-left: 4px solid deepskyblue;
+}
+
+.relegation {
+    border-left: 4px solid red;
+}
+
+.fixture-card-header {
+    background-color: #304; // TODO: Use something like color-thief to determine colour from logo (might have to be input to this component)
+    border-bottom-width: 0;
+    border-bottom-color: #304;
+    color: #fff;
+}
+
+.crest {
+    width: 25px !important;
+}
