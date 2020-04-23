@@ -26,7 +26,11 @@ export const SIDE_BAR_ITEMS: NbMenuItem[] = [
             },
             {
                 title: 'English Premier League',
-                link: '/football/leagues/24',
+                link: '/football/leagues/524',
+            },
+            {
+                title: 'German Bundesliga',
+                link: '/football/leagues/754',
             },
             {
                 title: 'UEFA Champions League',

@@ -14,6 +14,9 @@ export class FootballTableComponent implements OnInit {
   @Input()
   public standings: Standing[];
 
+  @Input()
+  public color: string;
+
   constructor() { }
 
   ngOnInit(): void {
