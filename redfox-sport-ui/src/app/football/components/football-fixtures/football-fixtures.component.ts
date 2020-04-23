@@ -11,6 +11,9 @@ export class FootballFixturesComponent implements OnInit {
   @Input()
   public fixtures: FootballMatch[];
 
+  @Input()
+  public color: string;
+
   constructor() { }
 
   ngOnInit(): void {

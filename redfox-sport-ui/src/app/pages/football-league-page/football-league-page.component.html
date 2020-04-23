@@ -1,12 +1,12 @@
 <h1 class="d-flex">
-    <img id="league-logo" class="mr-1" [src]="league.logo" alt="logo">
+    <img id="league-logo" class="mr-2" [src]="league.logo" alt="logo">
     <span>{{ league.name }}</span>
 </h1>
 <div class="row">
     <div class="col-12 col-md-6">
-        <app-football-fixtures [fixtures]="matches"></app-football-fixtures>
+        <app-football-fixtures [fixtures]="matches" [color]="colorScheme"></app-football-fixtures>
     </div>
     <div class="col-12 col-md-6">
-        <app-football-table [leagueName]="league.name" [standings]="standings"></app-football-table>
+        <app-football-table [leagueName]="league.name" [standings]="standings" [color]="colorScheme"></app-football-table>
     </div>
 </div>
