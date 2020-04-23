@@ -1,16 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NbCardModule } from '@nebular/theme';
+import { NbCardModule, NbIconModule, NbListModule } from '@nebular/theme';
 import { FootballMatchCardComponent } from './components/football-match-card/football-match-card.component';
+import { FootballFixturesComponent } from './components/football-fixtures/football-fixtures.component';
+import { FootballTableComponent } from './components/football-table/football-table.component';
 
 
 
 @NgModule({
-  declarations: [FootballMatchCardComponent],
+  declarations: [
+    FootballMatchCardComponent, 
+    FootballFixturesComponent, 
+    FootballTableComponent
+  ],
   imports: [
     CommonModule,
-    NbCardModule
+    NbCardModule,
+    NbCardModule,
+    NbIconModule,
+    NbListModule
   ],
-  exports: [FootballMatchCardComponent]
+  exports: [
+    FootballMatchCardComponent, 
+    FootballFixturesComponent, 
+    FootballTableComponent
+  ]
 })
 export class FootballModule { }

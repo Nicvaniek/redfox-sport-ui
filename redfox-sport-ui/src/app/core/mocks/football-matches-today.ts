@@ -1,4 +1,4 @@
-import { FootballMatch } from './models/football-match';
+import { FootballMatch } from '../../football/models/football-match';
 
 export const FOOTBALL_TODAY: FootballMatch[] = [{
     league: {

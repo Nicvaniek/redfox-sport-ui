@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FootballMatch } from 'src/app/core/mocks/models/football-match';
+import { FootballMatch } from 'src/app/football/models/football-match';
 
 @Component({
   selector: 'app-football-match-card',

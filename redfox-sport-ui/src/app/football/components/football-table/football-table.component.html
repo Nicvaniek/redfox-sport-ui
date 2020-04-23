@@ -1,0 +1,48 @@
+<nb-card>
+    <nb-card-header class="fixture-card-header">
+        {{ leagueName }} Table
+    </nb-card-header>
+    <nb-card-body class="pl-2 pr-2">
+        <table class="w-100">
+            <tr>
+                <th>#</th>
+                <th class="align-left">Team</th>
+                <th>PL</th>
+                <th class="d-none d-md-table-cell">W</th>
+                <th class="d-none d-md-table-cell">D</th>
+                <th class="d-none d-md-table-cell">L</th>
+                <th class="d-none d-md-table-cell">+/-</th>
+                <th>GD</th>
+                <th>PTS</th>
+            </tr>
+            <tr *ngFor="let standing of standings" class="p-1">
+                <td [ngClass]="{
+                    'promotion': standing.state === 'PROMOTION', 
+                    'play-off': standing.state === 'PLAY_OFF', 
+                    'relegation': standing.state === 'RELEGATION'
+                }">
+                    {{ standing.rank }}
+                </td>
+                <td class="align-left">
+                    <img [src]="standing.team.crest" alt="logo" class="mr-2 crest">
+                    <span>{{ standing.team.name }}</span>
+                </td>
+                <td>{{ standing.matchesPlayed }}</td>
+                <td class="d-none d-md-table-cell">
+                    {{ standing.matchesWon }}
+                </td>
+                <td class="d-none d-md-table-cell">
+                    {{ standing.matchesDrew }}
+                </td>
+                <td class="d-none d-md-table-cell">
+                    {{ standing.matchesLost }}
+                </td>
+                <td class="d-none d-md-table-cell">
+                    {{ standing.scored + '//' + standing.conceded }}
+                </td>
+                <td>{{ standing.scored - standing.conceded }}</td>
+                <td>{{ standing.points }}</td>
+            </tr>
+        </table>
+    </nb-card-body>
+</nb-card>

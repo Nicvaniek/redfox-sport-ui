@@ -1,0 +1,16 @@
+.list-item-child {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+.home-team-name {
+    text-align: right;
+}
+.fixture-card-header {
+    background-color: #304; // TODO: Use something like color-thief to determine colour from logo (might have to be input to this component)
+    border-bottom-width: 0;
+    border-bottom-color: #304;
+    color: #fff;
+}
+.crest {
+    width: 25px;
+}

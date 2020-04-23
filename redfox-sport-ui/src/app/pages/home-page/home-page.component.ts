@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FootballService } from 'src/app/football/services/football.service';
-import { FootballMatch } from 'src/app/core/mocks/models/football-match';
+import { FootballMatch } from 'src/app/football/models/football-match';
 
 @Component({
   selector: 'app-home-page',
