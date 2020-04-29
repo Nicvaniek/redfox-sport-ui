@@ -6,3 +6,11 @@
   @include nb-theme-global();
 };
 /* You can add global styles to this file, and also import other style files */
+.nb-theme-default nb-calendar.full-width nb-base-calendar nb-card {
+  border: none !important;
+  width: 100% !important;
+}
+
+.clickable {
+  cursor: pointer;
+}

@@ -6,22 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   NbThemeModule,
   NbLayoutModule,
-  NbIconModule,
-  NbUserModule,
-  NbActionsModule,
   NbMenuModule,
   NbSidebarModule,
-  NbContextMenuModule
 } from '@nebular/theme';
-import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { HeaderComponent } from './core/components/header/header.component';
 import { PagesModule } from './pages/pages.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -30,12 +22,8 @@ import { PagesModule } from './pages/pages.module';
     NbMenuModule.forRoot(),
     NbSidebarModule.forRoot(),
     NbLayoutModule,
-    NbEvaIconsModule,
-    NbIconModule,
-    NbUserModule,
-    NbActionsModule,
-    NbContextMenuModule,
-    PagesModule
+    PagesModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
