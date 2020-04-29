@@ -2,11 +2,15 @@
     <nb-card-header  
     class="fixture-card-header d-flex justify-content-between align-items-end"
     [ngStyle]="{ 'background-color': color, 'border-bottom-color': color }">
-        <nb-icon icon="arrow-ios-back-outline"></nb-icon>
-        <span>Today</span>
-        <nb-icon icon="arrow-ios-forward-outline"></nb-icon>
+        <nb-icon icon="arrow-ios-back-outline" class="clickable" (click)="previousDay()"></nb-icon>
+        <span class="clickable" (click)="toggleCalendar()">
+            {{ selectedDate | friendlyDate }}
+            <nb-icon icon="chevron-down-outline" *ngIf="!showCalendar"></nb-icon>
+            <nb-icon icon="chevron-up-outline" *ngIf="showCalendar"></nb-icon>
+        </span>
+        <nb-icon icon="arrow-ios-forward-outline" class="clickable" (click)="nextDay()"></nb-icon>
     </nb-card-header>
-    <nb-list>
+    <nb-list *ngIf="!showCalendar">
         <nb-list-item class="d-flex justify-content-center" *ngFor="let match of fixtures">
             <span class="list-item-child home-team-name mr-2">
                 {{ match.homeTeam.name }}
@@ -26,4 +30,13 @@
             </span>
         </nb-list-item>
     </nb-list>
+    <nb-card-body *ngIf="showCalendar">
+        <div class="d-flex justify-content-center">
+            <nb-calendar 
+                class="w-100 full-width" 
+                [(date)]="selectedDate" 
+                (dateChange)="toggleCalendar()">
+            </nb-calendar>
+        </div>
+    </nb-card-body>
 </nb-card>

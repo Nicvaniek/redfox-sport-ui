@@ -171,6 +171,8 @@ export const BUNDESLIGA_STANDINGS: Standing[] = [{
     matchesLost: 4,
     matchesPlayed: 25,
     matchesWon: 4,
+    scored: 20,
+    points: 29
 }, {
     rank: 13,
     team: {
