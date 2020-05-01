@@ -1,6 +1,6 @@
 import { FootballMatch } from '../../football/models/football-match';
 
-export const FOOTBALL_TODAY: FootballMatch[] = [{
+export const FOOTBALL_WIP: FootballMatch[] = [{
     league: {
         name: 'English Premier League'
     },

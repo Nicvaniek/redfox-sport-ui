@@ -1,23 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FootballFixturesComponent } from './football-fixtures.component';
+import { FootballFixturesCombinedComponent } from './football-fixtures-combined.component';
 import { NbCardModule, NbListModule, NbIconModule, NbCalendarModule } from '@nebular/theme';
 import { CoreModule } from 'src/app/core/core.module';
 
-describe('FootballFixturesComponent', () => {
-  let component: FootballFixturesComponent;
-  let fixture: ComponentFixture<FootballFixturesComponent>;
+describe('FootballFixturesCombinedComponent', () => {
+  let component: FootballFixturesCombinedComponent;
+  let fixture: ComponentFixture<FootballFixturesCombinedComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ NbCardModule, NbListModule, CoreModule, NbIconModule, NbCalendarModule ],
-      declarations: [ FootballFixturesComponent ]
+      declarations: [ FootballFixturesCombinedComponent ],
+      imports: [NbCardModule, NbListModule, CoreModule, NbIconModule, NbCalendarModule]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FootballFixturesComponent);
+    fixture = TestBed.createComponent(FootballFixturesCombinedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
