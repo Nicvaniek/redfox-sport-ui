@@ -3,7 +3,7 @@
     class="fixture-card-header d-flex justify-content-between align-items-end"
     [ngStyle]="{ 'background-color': color, 'border-bottom-color': color }">
         <nb-icon icon="arrow-ios-back-outline" class="clickable" (click)="previousDay()"></nb-icon>
-        <span class="clickable" (click)="toggleCalendar()">
+        <span class="clickable d-flex align-items-center" (click)="toggleCalendar()">
             {{ selectedDate | friendlyDate }}
             <nb-icon icon="chevron-down-outline" *ngIf="!showCalendar"></nb-icon>
             <nb-icon icon="chevron-up-outline" *ngIf="showCalendar"></nb-icon>

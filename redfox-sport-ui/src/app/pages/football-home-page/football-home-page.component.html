@@ -1,1 +1,18 @@
-<p>football-home-page works!</p>
+<h1>Football</h1>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <app-football-fixtures-combined [fixtures]="fixtures"></app-football-fixtures-combined>
+    </div>
+    <div class="col-12 col-md-6">
+        <nb-card>
+            <nb-card-body>
+                <h4 class="mb-4">Football news</h4>
+                <app-top-story [article]="headlines[0]"></app-top-story>
+                <ng-container *ngFor="let story of headlines | slice:1">
+                    <hr>
+                    <app-top-story [article]="story"></app-top-story>
+                </ng-container>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>`

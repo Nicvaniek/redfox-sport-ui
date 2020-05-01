@@ -1,12 +1,18 @@
-<h1>Sport Today</h1>
-<h2 class="mt-4">Football</h2>
-<div class="row">
-    <div class="col-12 col-md-4 mb-3" *ngFor="let footballMatch of footballMatches">
-        <app-football-match-card [match]="footballMatch"></app-football-match-card>
+<!-- <h1>Sport Today</h1> -->
+<div class="row mt-4">
+    <div class="col-12 col-md-6">
+        <app-football-fixtures-combined [cardTitle]="'Football Today'" [fixtures]="footballToday"></app-football-fixtures-combined>
     </div>
-</div>
-<div class="row">
-    <div class="col-12">
-        <button class="view-all float-right" nbButton shape="round" size="small" status="success">View all football matches</button>
+    <div class="col-12 col-md-6">
+        <nb-card>
+            <nb-card-body>
+                <h4 class="mb-4">Sport news</h4>
+                <app-top-story [article]="headlines[0]"></app-top-story>
+                <ng-container *ngFor="let story of headlines | slice:1">
+                    <hr>
+                    <app-top-story [article]="story"></app-top-story>
+                </ng-container>
+            </nb-card-body>
+        </nb-card>
     </div>
 </div>
