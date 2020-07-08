@@ -11,6 +11,7 @@ import {
 } from '@nebular/theme';
 import { PagesModule } from './pages/pages.module';
 import { CoreModule } from './core/core.module';
+import { ApiModule } from './api/api.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,7 +24,8 @@ import { CoreModule } from './core/core.module';
     NbSidebarModule.forRoot(),
     NbLayoutModule,
     PagesModule,
-    CoreModule
+    CoreModule,
+    ApiModule.forRoot({ rootUrl: 'http://localhost:8080' })
   ],
   providers: [],
   bootstrap: [AppComponent]

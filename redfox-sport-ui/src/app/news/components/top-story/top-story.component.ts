@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Article } from '../../models/article';
+import { Article } from 'src/app/api/models';
 
 @Component({
   selector: 'app-top-story',

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FixturesResponse } from 'src/app/football/models/fixtures-response';
 import { FOOTBALL_TODAY } from 'src/app/core/mocks/football-today';
-import { Article } from 'src/app/news/models/article';
-import { FOOTBALL_HEADLINES } from 'src/app/core/mocks/football-headlines';
+import { Article } from 'src/app/api/models';
 
 @Component({
   selector: 'app-football-home-page',
@@ -18,7 +17,7 @@ export class FootballHomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.fixtures = FOOTBALL_TODAY;
-    this.headlines = FOOTBALL_HEADLINES;
+    this.headlines = [];
   }
 
 }
