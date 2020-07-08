@@ -4,6 +4,7 @@ import { HomePageComponent } from './home-page.component';
 import { FootballModule } from 'src/app/football/football.module';
 import { NewsModule } from 'src/app/news/news.module';
 import { NbCardModule } from '@nebular/theme';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('HomePageComponent', () => {
   let component: HomePageComponent;
@@ -12,7 +13,7 @@ describe('HomePageComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HomePageComponent ],
-      imports: [  FootballModule, NbCardModule, NewsModule ]
+      imports: [  FootballModule, NbCardModule, NewsModule, HttpClientTestingModule ]
     })
     .compileComponents();
   }));

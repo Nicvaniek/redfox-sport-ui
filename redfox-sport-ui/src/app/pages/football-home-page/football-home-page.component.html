@@ -4,7 +4,7 @@
         <app-football-fixtures-combined [fixtures]="fixtures"></app-football-fixtures-combined>
     </div>
     <div class="col-12 col-md-6">
-        <nb-card>
+        <nb-card *ngIf="headlines.length">
             <nb-card-body>
                 <h4 class="mb-4">Football news</h4>
                 <app-top-story [article]="headlines[0]"></app-top-story>
