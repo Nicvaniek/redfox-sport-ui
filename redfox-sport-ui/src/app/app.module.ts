@@ -25,7 +25,7 @@ import { ApiModule } from './api/api.module';
     NbLayoutModule,
     PagesModule,
     CoreModule,
-    ApiModule.forRoot({ rootUrl: 'http://localhost:8080' })
+    ApiModule.forRoot({ rootUrl: 'https://redfox-sport-api.herokuapp.com' })
   ],
   providers: [],
   bootstrap: [AppComponent]
