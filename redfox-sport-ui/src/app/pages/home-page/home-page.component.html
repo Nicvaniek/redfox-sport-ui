@@ -4,7 +4,8 @@
         <app-football-fixtures-combined [cardTitle]="'Football Today'" [fixtures]="footballToday"></app-football-fixtures-combined>
     </div>
     <div class="col-12 col-md-6">
-        <nb-card>
+        <!-- TODO: Change this if statement once you do error handling-->
+        <nb-card *ngIf="headlines.length">
             <nb-card-body>
                 <h4 class="mb-4">Sport news</h4>
                 <app-top-story [article]="headlines[0]"></app-top-story>
