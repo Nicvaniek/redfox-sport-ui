@@ -1,10 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FixturesResponse } from 'src/app/football/models/fixtures-response';
 import { FOOTBALL_TODAY } from 'src/app/core/mocks/football-today';
-import { ArticlesControllerService } from 'src/app/api/services';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { takeUntil, finalize } from 'rxjs/operators';
 import { Article } from 'src/app/api/models/article';
+import { NewsService } from 'src/app/news/services/news.service';
+import { NgxUiLoaderService, SPINNER, POSITION } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-home-page',
@@ -15,10 +16,14 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
   public headlines: Article[] = [];
   public footballToday: FixturesResponse[];
+  public NEWS_LOADER_KEY = 'sports-news-loader';
+  public SPINNER_TYPES = SPINNER;
+  public SPINNER_POSITION = POSITION;
+  public sportsNewsLoadError = false;
 
   private unsubscribe$ = new Subject();
 
-  constructor(private articlesService: ArticlesControllerService) { }
+  constructor(private newsService: NewsService, private loaderService: NgxUiLoaderService) { }
 
   ngOnInit(): void {
     this.loadSportNews();
@@ -26,14 +31,13 @@ export class HomePageComponent implements OnInit, OnDestroy {
   }
 
   private loadSportNews(): void {
-    // TODO: Might be best to add a store and dispatch an action to fetch this in the app component.
-    // This will allow us to keep the news list in the store and won't load each timw you load this component.
-    // However, when you refresh the page, the list should update :)
-    this.articlesService.getArticlesUsingGET()
-      .pipe(takeUntil(this.unsubscribe$))
-      .subscribe(response => {
-        this.headlines = response.articles;
-      });
+    this.loaderService.startLoader(this.NEWS_LOADER_KEY);
+    this.newsService.getSportsArticles().pipe(
+      takeUntil(this.unsubscribe$),
+      finalize(() => this.loaderService.stopLoader(this.NEWS_LOADER_KEY))
+    ).subscribe(articles => {
+        this.headlines = articles;
+      }, () => this.sportsNewsLoadError = true);
   }
 
   ngOnDestroy(): void {
