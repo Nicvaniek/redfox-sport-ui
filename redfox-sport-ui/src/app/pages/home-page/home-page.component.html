@@ -4,15 +4,22 @@
         <app-football-fixtures-combined [cardTitle]="'Football Today'" [fixtures]="footballToday"></app-football-fixtures-combined>
     </div>
     <div class="col-12 col-md-6">
-        <!-- TODO: Change this if statement once you do error handling-->
-        <nb-card *ngIf="headlines.length">
+        <nb-card>
             <nb-card-body>
                 <h4 class="mb-4">Sport news</h4>
-                <app-top-story [article]="headlines[0]"></app-top-story>
-                <ng-container *ngFor="let story of headlines | slice:1">
-                    <hr>
-                    <app-top-story [article]="story"></app-top-story>
+                <ng-container *ngIf="!sportsNewsLoadError && headlines.length">
+                    <app-top-story [article]="headlines[0]"></app-top-story>
+                    <ng-container *ngFor="let story of headlines | slice:1">
+                        <hr>
+                        <app-top-story [article]="story"></app-top-story>
+                    </ng-container>
                 </ng-container>
+                <nb-alert *ngIf="sportsNewsLoadError" status="danger">Unable to load sports news at this time. Please try again later.</nb-alert>
+                <ngx-ui-loader 
+                    [fgsPosition]="SPINNER_POSITION.topCenter" 
+                    [fgsType]="SPINNER_TYPES.ballScaleMultiple" 
+                    [loaderId]="NEWS_LOADER_KEY">
+                </ngx-ui-loader>
             </nb-card-body>
         </nb-card>
     </div>

@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FootballModule } from '../football/football.module';
-import { NbButtonModule, NbCardModule } from '@nebular/theme';
+import { NbButtonModule, NbCardModule, NbAlertModule } from '@nebular/theme';
 import { FootballLeaguePageComponent } from './football-league-page/football-league-page.component';
 import { FootballHomePageComponent } from './football-home-page/football-home-page.component';
 import { NewsModule } from '../news/news.module';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 
 
@@ -20,7 +21,9 @@ import { NewsModule } from '../news/news.module';
     FootballModule,
     NbButtonModule,
     NbCardModule,
-    NewsModule
+    NewsModule,
+    NgxUiLoaderModule,
+    NbAlertModule
   ]
 })
 export class PagesModule { }
